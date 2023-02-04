@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { SideBar } from './components/sidebar/SideBar';
+import { PostForm } from './components/postForm/PostForm';
 
 const setCSS = (styleName: string) => { };
 
@@ -8,6 +9,8 @@ function App() {
   return (
     <div className="App">
       <SideBar applyStyle={setCSS} />
+
+      <PostForm />
 
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
