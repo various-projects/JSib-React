@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Styles from "./PostForm.module.css";
 
 
 //TODO: handle file input
@@ -10,7 +11,7 @@ export const PostForm = () => {
     const [title, setTitle] = useState("");
     const [text, setText] = useState("");
     return (
-        <form id="post-form" action="post.php" method="POST">
+        <form className={Styles['post-form']} action="post.php" method="POST">
             <table style={{ maxWidth: "50%", minWidth: "300px", margin: "0 auto" }}>
                 <col /><col width="99%" />
                 <tr>

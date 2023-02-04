@@ -1,13 +1,13 @@
 import { MessageDto } from "../../models/message/messageDto";
 import { Route } from "../../models/routing/route";
-import { parseMarkup } from "../../features/markupParsing/markupParser";
+import { renderMarkup } from "../../features/markupParsing/markupParser";
 
 type Props = {
     onMessageClick?: (route: Route) => void,
     onNumberClick?: (route: Route) => void,
     onPicClick: Function,
     onReplyClick: Function,
-    onRefClick: (route: Route) => void,
+    getRefContent: (route: Route) => Promise<JSX.Element>,
     onGoOriginal?: (route: Route) => void,
     message: MessageDto,
     route: Route,
@@ -26,6 +26,6 @@ export const Message = (props: Props) => (
         <a onClick={props.onPicClick()} href="#">
             <img className="messagePic" alt="Thumb" />
         </a>
-        <span className="messageText">{parseMarkup(props.message.text, props.onRefClick, props.route)}</span>
+        <span className="messageText">{renderMarkup(props.message.text, props.getRefContent, props.route)}</span>
     </div>
 )
