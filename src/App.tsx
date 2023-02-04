@@ -1,9 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import { SideBar } from './components/sidebar/SideBar';
+
+const setCSS = (styleName: string) => { };
 
 function App() {
   return (
     <div className="App">
+      <SideBar applyStyle={setCSS} />
+
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
